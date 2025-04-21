@@ -1,0 +1,234 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  width: 60%; /* 根据实际需要进行调整 */
+  margin: 0 auto; /* 使容器在页面中居中 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+}
+
+
+.results-carousel .item {
+  width: 85%; /* 或其他所需百分比 */
+  margin: 10px auto; /* 调整边距，并居中对齐 */
+  overflow: hidden;
+  border: 0px solid #8b5b5b;
+  border-radius: 10px;
+  padding: 0;
+  text-align: center; /* 文本居中 */
+  margin-top: 10px; /* 在图像和文本之间添加一些空间 */
+  color: #0099ff; /* 设置文本颜色 */
+  font-size: 13px; /* 设置字体大小 */
+  /* 可以添加其他样式，如字体样式、行高等 */
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+.gif-grid-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* 四列布局 */
+  gap: 2px;
+  width: 100%; /* 确保容器宽度充足 */
+  margin-left: auto; /* 左边距自动 */
+  margin-right: auto; /* 右边距自动 */
+  margin-top: -60px; /* 右边距自动 */
+}
+
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 四列布局 */
+  gap: 10px;
+  width: 100%; /* 确保容器宽度充足 */
+  margin-left: auto; /* 左边距自动 */
+  margin-right: auto; /* 右边距自动 */
+}
+
+.item {
+  border: 0px solid #ddd; /* 为项目添加边框（可选） */
+}
+
+.image-item img, .gif-item img {
+  width: 100%; /* 让图像填满容器 */
+  height: auto; /* 保持图像的原始宽高比 */
+}
+
+.full-width-text {
+  grid-column: 1 / -1; /* 从第一列开始，延伸到最后一列 */
+  text-align: center; /* 文字居中 */
+  color: #0099ff; /* 设置文本颜色 */
+  font-size: 20px; /* 设置字体大小 */
+  /* 其他样式 */
+}
+
+.full-width-text-black {
+  grid-column: 1 / -1; /* 从第一列开始，延伸到最后一列 */
+  text-align: center; /* 文字居中 */
+  color: #000000; /* 设置文本颜色 */
+  font-size: 20px; /* 设置字体大小 */
+  /* 其他样式 */
+}
+
+.gif-caption {
+  text-align: center;
+  color: #000000;
+  font-size: 18px;
+}
+
+.gif-caption-small {
+  text-align: center;
+  color: #0099ff; /* 设置文本颜色 */
+  font-size: 11px;
+}
+
+.gif-caption-tiny {
+  text-align: center;
+  color: #0099ff; /* 设置文本颜色 */
+  font-size: 8px;
+}
+
+.gif-caption-intens {
+  text-align: center;
+  color: #c27100; /* 设置文本颜色 */
+  font-size: 15px;
+}
