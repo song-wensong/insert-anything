@@ -1,0 +1,15 @@
+torch==2.5.1
+torchvision==0.20.1
+diffusers==0.32.2
+transformers==4.50.3
+peft==0.15.1
+opencv-python
+protobuf
+sentencepiece
+gradio==3.39.0
+bezier
+lightning==2.5.1
+datasets
+prodigyopt
+einops
+scipy
