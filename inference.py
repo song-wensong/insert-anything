@@ -93,7 +93,7 @@ diptych_ref_tar = Image.fromarray(diptych_ref_tar)
 mask_diptych[mask_diptych == 1] = 255
 mask_diptych = Image.fromarray(mask_diptych)
 
-seeds = [42, 666, 123456]
+seeds = [666]
 
 for seed in seeds:
 

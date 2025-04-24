@@ -2,7 +2,7 @@
 <p align="center">
 <a href="https://song-wensong.github.io/"><strong>Wensong Song</strong></a>
 ·
-<a href="https://openreview.net/profile?id=~Hong_Jiang4"><strong>Hong Jinag</strong></a>
+<a href="https://openreview.net/profile?id=~Hong_Jiang4"><strong>Hong Jiang</strong></a>
 ·
 <a href="https://z-x-yang.github.io/"><strong>Zongxing Yang</strong></a>
 ·
@@ -21,9 +21,10 @@
 ## 🔥 News
 
 * **[Soon]** Release train code.
-* **[Soon]** Release **AnyInsertion** dataset on HuggingFace.
+* **[Soon]** Release **AnyInsertion** text-prompt dataset on HuggingFace.
 * **[Soon]** Support online demo on HuggingFace.
-* **[2025.4.22]** Release inference demo and pretrained checkpoint.
+* **[2025.4.25]** Release **AnyInsertion** mask-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion).
+* **[2025.4.22]** Release inference demo and pretrained [checkpoint]((https://huggingface.co/WensongSong/Insert-Anything)).
 
 
 ## 🛠️ Installation
@@ -49,26 +50,35 @@ pip install -r requirements.txt
 
 
 ## ⏬ Download Checkpoints
-*   **Insert Anything Model:** Download the main checkpoint from [HuggingFace](https://huggingface.co/WensongSong/Insert-Anything) and replace `/path/to/lora` in inference.py.
+*   **Insert Anything Model:** Download the main checkpoint from [HuggingFace](https://huggingface.co/WensongSong/Insert-Anything) and replace `/path/to/lora` in inference.py and app.py.
 *   **FLUX.1-Fill-dev Model:** This project relies on [FLUX.1-Fill-dev](https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev) and [FLUX.1-Redux-dev ](https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev) as components. Download its checkpoint(s) as well and replace `/path/to/black-forest-labs-FLUX.1-Fill-dev` and `/path/to/black-forest-labs-FLUX.1-Redux-dev`.
 
 ## 🎥 Inference
 ### Using Command Line
 ```bash
-cd insert-anything
-
 python inference.py
 ```
 
+## 🖥️ Gradio
+### Using Command Line
+```bash
+python app.py
+```
 
 ## 💡 Tips
 
-To run mask-prompt examples, you may need to obtain the corresponding masks. You can choose to use [Grounded SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) or the draw_mask script provided by us
+🔷  To run mask-prompt examples, you may need to obtain the corresponding masks. You can choose to use [Grounded SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) or the draw_mask script provided by us
 
 ```Bash
 python draw_mask.py 
 ```
 
+🔷  The mask must fully cover the area to be edited.
+
+
+
+## ⏬ Download Dataset
+*   **AnyInsertion dataset:** Download the AnyInsertion dataset from [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion).
 
 
 ## 🤝 Acknowledgement
@@ -80,13 +90,10 @@ We appreciate the open source of the following projects:
 
 ## Citation
 ```
-@misc{song2025insertanythingimageinsertion,
-      title={Insert Anything: Image Insertion via In-Context Editing in DiT}, 
-      author={Wensong Song and Hong Jiang and Zongxing Yang and Ruijie Quan and Yi Yang},
-      year={2025},
-      eprint={2504.15009},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2504.15009}, 
+@article{song2025insert,
+  title={Insert Anything: Image Insertion via In-Context Editing in DiT},
+  author={Song, Wensong and Jiang, Hong and Yang, Zongxing and Quan, Ruijie and Yang, Yi},
+  journal={arXiv preprint arXiv:2504.15009},
+  year={2025}
 }
 ```
