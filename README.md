@@ -13,7 +13,7 @@
 <br>
     <a href="https://arxiv.org/pdf/2504.15009"><img src='https://img.shields.io/badge/arXiv-InsertAnything-red?color=%23aa1a1a' alt='Paper PDF'></a>
     <a href='https://song-wensong.github.io/insert-anything/'><img src='https://img.shields.io/badge/Project%20Page-InsertAnything-cyan?logoColor=%23FFD21E&color=%23cbe6f2' alt='Project Page'></a>
-    <a href=''><img src='https://img.shields.io/badge/Hugging%20Face-InsertAnything-yellow?logoColor=%23FFD21E&color=%23ffcc1c'></a>
+    <a href='https://huggingface.co/spaces/WensongSong/Insert-Anything'><img src='https://img.shields.io/badge/Hugging%20Face-InsertAnything-yellow?logoColor=%23FFD21E&color=%23ffcc1c'></a>
 <br>
 <b>Zhejiang University &nbsp; | &nbsp; Harvard University &nbsp; | &nbsp;  Nanyang Technological University </b>
 </p>
