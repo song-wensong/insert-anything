@@ -22,7 +22,7 @@
 
 * **[Soon]** Release train code.
 * **[Soon]** Release **AnyInsertion** text-prompt dataset on HuggingFace.
-* **[Soon]** Support online demo on HuggingFace.
+* **[2025.4.26]** Support online demo on [HuggingFace](https://huggingface.co/spaces/WensongSong/Insert-Anything).
 * **[2025.4.25]** Release **AnyInsertion** mask-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion).
 * **[2025.4.22]** Release inference demo and pretrained [checkpoint]((https://huggingface.co/WensongSong/Insert-Anything)).
 

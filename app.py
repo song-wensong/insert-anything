@@ -10,6 +10,7 @@ from diffusers import FluxFillPipeline, FluxPriorReduxPipeline
 import math
 from utils.utils import get_bbox_from_mask, expand_bbox, pad_to_square, box2squre, crop_back, expand_image_mask
 
+
 dtype = torch.bfloat16
 size = (768, 768)
 
@@ -22,7 +23,10 @@ pipe.load_lora_weights(
     "/path/to/lora"
 )
 
+
 redux = FluxPriorReduxPipeline.from_pretrained("/path/to/black-forest-labs-FLUX.1-Redux-dev").to(dtype=dtype).to("cuda")
+
+
 
 ###   example  #####
 ref_dir='./examples/ref_image'
@@ -44,22 +48,24 @@ image_mask_list.sort()
 ###   example  #####
 
 
+
+
 def run_local(base_image, base_mask, reference_image, ref_mask, seed, base_mask_option, ref_mask_option):
 
 
     if base_mask_option == "Draw Mask":
-        tar_image = base_image["image"]
-        tar_mask = base_image["mask"]
+        tar_image = base_image["background"]
+        tar_mask = base_image["layers"][0]
     else:
-        tar_image = base_image["image"]
-        tar_mask = base_mask
+        tar_image = base_image["background"]
+        tar_mask = base_mask["background"]
 
     if ref_mask_option == "Draw Mask":
-        ref_image = reference_image["image"]
-        ref_mask = reference_image["mask"]
+        ref_image = reference_image["background"]
+        ref_mask = reference_image["layers"][0]
     else:
-        ref_image = reference_image["image"]
-        ref_mask = ref_mask
+        ref_image = reference_image["background"]
+        ref_mask = ref_mask["background"]
 
 
     tar_image = tar_image.convert("RGB")
@@ -75,6 +81,11 @@ def run_local(base_image, base_mask, reference_image, ref_mask, seed, base_mask_
     ref_mask = np.asarray(ref_mask)
     ref_mask = np.where(ref_mask > 128, 1, 0).astype(np.uint8)
 
+    if tar_mask.sum() == 0:
+        raise gr.Error('No mask for the background image.Please check mask button!')
+
+    if ref_mask.sum() == 0:
+        raise gr.Error('No mask for the reference image.Please check mask button!')
 
     ref_box_yyxx = get_bbox_from_mask(ref_mask)
     ref_mask_3 = np.stack([ref_mask,ref_mask,ref_mask],-1)
@@ -133,6 +144,8 @@ def run_local(base_image, base_mask, reference_image, ref_mask, seed, base_mask_
     mask_diptych[mask_diptych == 1] = 255
     mask_diptych = Image.fromarray(mask_diptych)
 
+
+
     generator = torch.Generator("cuda").manual_seed(seed)
     edited_image = pipe(
         image=diptych_ref_tar,
@@ -143,6 +156,8 @@ def run_local(base_image, base_mask, reference_image, ref_mask, seed, base_mask_
         generator=generator,
         **pipe_prior_output, 
     ).images[0]
+
+
 
     width, height = edited_image.size
     left = width // 2
@@ -168,32 +183,35 @@ def update_ui(option):
 
 with gr.Blocks() as demo:
 
-    gr.Markdown("#  Play with InsertAnything to Insert your Target Objects! ")
-    gr.Markdown("# Upload / Draw Images for the Background (up) and Reference Object (down)")
-    gr.Markdown("### Draw mask on the background or just upload the mask.")
-    gr.Markdown("### Only select one of these two methods. Don't forget to click the corresponding button!!")
+
+    gr.Markdown("# Insert-Anything")
+    gr.Markdown("### Draw mask or upload mask.Only select one of these two methods. Don't forget to click the corresponding button!!")
+
 
     with gr.Row():
-        with gr.Column():
+        with gr.Column(scale=1):
             with gr.Row():
-                base_image = gr.Image(label="Background Image", source="upload", tool="sketch", type="pil",
-                                        brush_color='#FFFFFF', mask_opacity=0.5)
+                base_image = gr.ImageEditor(label="Background Image", sources="upload", type="pil", brush=gr.Brush(colors=["#FFFFFF"],default_size = 30,color_mode = "fixed"),
+                                    layers = False,
+                                    interactive=True)
 
-                base_mask = gr.Image(label="Background Mask", source="upload", type="pil")
+                base_mask = gr.ImageEditor(label="Background Mask", sources="upload", type="pil", layers = False, brush=False, eraser=False)
 
             with gr.Row():
                 base_mask_option = gr.Radio(["Draw Mask", "Upload with Mask"], label="Background Mask Input Option", value="Upload with Mask")
 
             with gr.Row():
-                ref_image = gr.Image(label="Reference Image", source="upload", tool="sketch", type="pil", 
-                                    brush_color='#FFFFFF', mask_opacity=0.5)
+                ref_image = gr.ImageEditor(label="Reference Image", sources="upload", type="pil", brush=gr.Brush(colors=["#FFFFFF"],default_size = 30,color_mode = "fixed"),
+                                    layers = False,
+                                    interactive=True)
                                     
-                ref_mask = gr.Image(label="Reference Mask", source="upload", type="pil")
+                ref_mask = gr.ImageEditor(label="Reference Mask", sources="upload", type="pil", layers = False, brush=False, eraser=False)
 
             with gr.Row():
                 ref_mask_option = gr.Radio(["Draw Mask", "Upload with Mask"], label="Reference Mask Input Option", value="Upload with Mask")
 
-            baseline_gallery = gr.Gallery(label='Output', show_label=True, elem_id="gallery", height=512, columns=1)
+        with gr.Column(scale=1):
+            baseline_gallery = gr.Gallery(label='Output', show_label=True, elem_id="gallery", height=701, columns=1)
             with gr.Accordion("Advanced Option", open=True):
                 seed = gr.Slider(label="Seed", minimum=-1, maximum=999999999, step=1, value=666)
                 gr.Markdown("### Guidelines")

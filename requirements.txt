@@ -6,7 +6,7 @@ peft==0.15.1
 opencv-python
 protobuf
 sentencepiece
-gradio==3.39.0
+gradio==5.24.0
 bezier
 lightning==2.5.1
 datasets
