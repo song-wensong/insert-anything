@@ -22,6 +22,8 @@
 
 * **[Soon]** Release train code.
 * **[Soon]** Release **AnyInsertion** text-prompt dataset on HuggingFace.
+* **[2025.5.6]** Support ComfyUI integration for easier workflow management.
+* **[2025.5.6]** Update inference demo to support **26GB VRAM**, with increased inference time.
 * **[2025.4.26]** Support online demo on [HuggingFace](https://huggingface.co/spaces/WensongSong/Insert-Anything).
 * **[2025.4.25]** Release **AnyInsertion** mask-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion).
 * **[2025.4.22]** Release inference demo and pretrained [checkpoint]((https://huggingface.co/WensongSong/Insert-Anything)).
@@ -58,12 +60,38 @@ pip install -r requirements.txt
 ```bash
 python inference.py
 ```
+Inference code updated: now supports running with 26GB GPU memory with increased inference time (in line 26-29).
 
 ## 🖥️ Gradio
 ### Using Command Line
 ```bash
 python app.py
 ```
+
+
+## 🧩 ComfyUI
+
+### 🔷 Install ComfyUI
+
+Clone the official [ComfyUI repository](https://github.com/comfyanonymous/ComfyUI) and follow the installation instructions.
+
+### 🔷 Add Custom Nodes
+
+Move the `ComfyUI_InsertAnything/Node_InsertAnything` folder into your local ComfyUI's `custom_nodes/` directory
+
+### 🔷 Load Workflow File
+
+Move the  `ComfyUI_InsertAnything/InsertAnything.json` file into your local ComfyUI's `user/default/workflows` directory
+
+
+### 🔷 Mask Option
+
+Use the **Mask Option** component to choose between two mask types:
+
+1. **Sketch**: Draw a mask directly in the ComfyUI interface.
+2. **Upload**: Upload an external image file as a mask.
+
+
 
 ## 💡 Tips
 

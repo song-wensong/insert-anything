@@ -15,13 +15,19 @@ size = (768, 768)
 pipe = FluxFillPipeline.from_pretrained(
     "/path/to/black-forest-labs-FLUX.1-Fill-dev",
     torch_dtype=dtype
-).to(device)
+)
 
 pipe.load_lora_weights(
     "/path/to/lora"
 )
 
-redux = FluxPriorReduxPipeline.from_pretrained("/path/to/black-forest-labs-FLUX.1-Redux-dev").to(dtype=dtype).to(device)
+redux = FluxPriorReduxPipeline.from_pretrained("/path/to/black-forest-labs-FLUX.1-Redux-dev").to(dtype=dtype)
+
+# The purpose of this code is to reduce the GPU memory usage to 26GB, but it will increase the inference time accordingly.
+# pipe.enable_model_cpu_offload()
+# pipe.enable_vae_slicing()
+# redux.enable_model_cpu_offload()
+
 
 # Load the source and reference images and masks
 # Please replace the paths with your own image and mask paths
