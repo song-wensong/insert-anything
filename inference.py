@@ -23,6 +23,10 @@ pipe.load_lora_weights(
 
 redux = FluxPriorReduxPipeline.from_pretrained("/path/to/black-forest-labs-FLUX.1-Redux-dev").to(dtype=dtype)
 
+# If you want to reduce GPU memory usage, please comment out the following two lines and uncomment the next three lines.
+pipe.to(device)
+redux.to(device)
+
 # The purpose of this code is to reduce the GPU memory usage to 26GB, but it will increase the inference time accordingly.
 # pipe.enable_model_cpu_offload()
 # pipe.enable_vae_slicing()
