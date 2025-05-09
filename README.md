@@ -30,6 +30,12 @@
 * **[2025.4.22]** Release inference demo and pretrained [checkpoint]((https://huggingface.co/WensongSong/Insert-Anything)).
 
 
+## 💡 Demo
+
+![Insert Anything Teaser](docs/InsertAnything_files/images/Insert-Anything-Github-teaser_00.png)
+
+For more demos and detailed examples, check out our project page: <a href="https://song-wensong.github.io/insert-anything/"><img src="https://img.shields.io/badge/Project%20Page-InsertAnything-cyan?logoColor=%23FFD21E&color=%23cbe6f2" alt="Project Page" /></a>
+
 ## 🛠️ Installation
 
 Begin by cloning the repository:
