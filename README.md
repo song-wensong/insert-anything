@@ -21,13 +21,13 @@
 ## 🔥 News
 
 * **[Soon]** Release train code.
-* **[Soon]** Release **AnyInsertion** text-prompt dataset on HuggingFace.
+* **[2025.5.13]** Release **AnyInsertion** text-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion_V1).
 * **[2025.5.9]** Released demo video of the Hugging Face Space, now available on [YouTube](https://www.youtube.com/watch?v=IbVcOqXkyXo) and [Bilibili]( https://www.bilibili.com/video/BV1uX55z5EtN/?share_source=copy_web&vd_source=306bd420c358f5d468394a1eb0f7b1ad).
 * **[2025.5.7]** Release inference for nunchaku demo to support **10GB VRAM**.
 * **[2025.5.6]** Support ComfyUI integration for easier workflow management.
 * **[2025.5.6]** Update inference demo to support **26GB VRAM**, with increased inference time.
 * **[2025.4.26]** Support online demo on [HuggingFace](https://huggingface.co/spaces/WensongSong/Insert-Anything).
-* **[2025.4.25]** Release **AnyInsertion** mask-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion).
+* **[2025.4.25]** Release **AnyInsertion** mask-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion_V1).
 * **[2025.4.22]** Release inference demo and pretrained [checkpoint]((https://huggingface.co/WensongSong/Insert-Anything)).
 
 
