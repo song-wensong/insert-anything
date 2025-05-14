@@ -123,6 +123,34 @@ Use the **Mask Option** component to choose between two mask types:
 
 ### 🔷 For Nunchaku(10 VRAM)
 We also provide a Nunchaku version of ComfyUI. You just need to follow the instructions above and replace the file names with those of the Nunchaku version (`ComfyUI_Nunchaku_InsertAnything`) .
+
+## 🧩 ComfyUI in community
+We deeply appreciate the community of developers who have created innovative applications based on the Insert Anything model. Throughout this development process, we have received invaluable feedback. As we continue to enhance our models, we will carefully consider these insights to further optimize our models and provide users with a better experience.
+
+Below is a selection of community‑created workflows along with their corresponding tutorials:
+
+<table>
+<tbody>
+  <tr>
+    <td>Workflow</td>
+    <td>Author</td>
+    <td>Tutorial</td>
+  </tr>
+  <tr>
+    <td><a href="https://openart.ai/workflows/t8star/insert-anything/hvMbsN7LXEAoMGZgv1fL"> Insert Anything极速万物迁移图像编辑优化自动版 </a> </td>
+    <td><a href="https://openart.ai/workflows/profile/t8star?sort=latest"> T8star-Aix </a></td>
+    <td>
+        <a href="https://youtu.be/rV4tw1PKh-4?si=XDK5O-SCT51aF5fW">
+          YouTube
+        </a>|
+        <a href="https://www.bilibili.com/video/BV1qjE7zgEhe/?spm_id_from=333.337.search-card.all.click&vd_source=6430895fb8ccabaed9a88151abe4a723">
+          Bilibili
+        </a>
+    </td>
+  </tr>
+</tbody>
+</table>
+
 ## 💡 Tips
 
 🔷  To run mask-prompt examples, you may need to obtain the corresponding masks. You can choose to use [Grounded SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) or the draw_mask script provided by us
