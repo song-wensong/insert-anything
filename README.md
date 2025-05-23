@@ -20,7 +20,7 @@
 
 ## 🔥 News
 
-* **[Soon]** Release train code.
+* **[2025.5.23]** Release the training code for users to reproduce results and adapt the pipeline to new tasks!
 * **[2025.5.13]** Release **AnyInsertion** text-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion_V1).
 * **[2025.5.9]** Released demo video of the Hugging Face Space, now available on [YouTube](https://www.youtube.com/watch?v=IbVcOqXkyXo) and [Bilibili]( https://www.bilibili.com/video/BV1uX55z5EtN/?share_source=copy_web&vd_source=306bd420c358f5d468394a1eb0f7b1ad).
 * **[2025.5.7]** Release inference for nunchaku demo to support **10GB VRAM**.
@@ -165,6 +165,26 @@ python draw_mask.py
 
 ## ⏬ Download Dataset
 *   **AnyInsertion dataset:** Download the AnyInsertion dataset from [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion_V1).
+
+## 🚀 Training
+
+### 🔷  Mask-prompt Training
+
+*   **Replace flux model paths:** Replace /path/to/black-forest-labs-FLUX.1-Fill-dev and /path/to/black-forest-labs-FLUX.1-Redux-dev in experiments/config/insertanything.yaml
+
+
+*   **Download mask-prompt dataset:** Download the AnyInsertion mask-prompt dataset from [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion_V1).
+
+
+*   **Convert parquet to image:** Use the script `parquet_to_image.py` to convert Parquet files to images.
+
+*   **Test(Optional):** If you want to perform testing during the training process, you can modify the test path under the specified file `src/train/callbacks.py`(line 350). The default does not require a testing process.
+
+*   **Run the training code:** Follow the instruction :
+   
+    ```Bash
+    bash scripts/train.sh
+    ```
 
 
 ## 🤝 Acknowledgement
