@@ -164,7 +164,7 @@ python draw_mask.py
 
 
 ## ⏬ Download Dataset
-*   **AnyInsertion dataset:** Download the AnyInsertion dataset from [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion).
+*   **AnyInsertion dataset:** Download the AnyInsertion dataset from [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion_V1).
 
 
 ## 🤝 Acknowledgement
