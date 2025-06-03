@@ -20,10 +20,11 @@
 
 ## 🔥 News
 
-* **[2025.6.1]** Released a new ComfyUI workflow! No need to download the full model folder!
+* **[2025.6.3]** Separate the ComfyUI code into a [new repository](https://github.com/mo230761/InsertAnything-ComfyUI-official).
+* **[2025.6.1]** Release a new ComfyUI workflow! No need to download the full model folder!
 * **[2025.5.23]** Release the training code for users to reproduce results and adapt the pipeline to new tasks!
 * **[2025.5.13]** Release **AnyInsertion** text-prompt dataset on [HuggingFace](https://huggingface.co/datasets/WensongSong/AnyInsertion_V1).
-* **[2025.5.9]** Released demo video of the Hugging Face Space, now available on [YouTube](https://www.youtube.com/watch?v=IbVcOqXkyXo) and [Bilibili]( https://www.bilibili.com/video/BV1uX55z5EtN/?share_source=copy_web&vd_source=306bd420c358f5d468394a1eb0f7b1ad).
+* **[2025.5.9]** Release demo video of the Hugging Face Space, now available on [YouTube](https://www.youtube.com/watch?v=IbVcOqXkyXo) and [Bilibili]( https://www.bilibili.com/video/BV1uX55z5EtN/?share_source=copy_web&vd_source=306bd420c358f5d468394a1eb0f7b1ad).
 * **[2025.5.7]** Release inference for nunchaku demo to support **10GB VRAM**.
 * **[2025.5.6]** Support ComfyUI integration for easier workflow management.
 * **[2025.5.6]** Update inference demo to support **26GB VRAM**, with increased inference time.
@@ -102,32 +103,7 @@ python app.py
 
 ## 🧩 ComfyUI
 
-### 🔷 Install ComfyUI
-
-Clone the official [ComfyUI repository](https://github.com/comfyanonymous/ComfyUI) and follow the installation instructions.
-
-### 🔷 Add Custom Nodes
-
-Move the `ComfyUI_InsertAnything/Node_InsertAnything` folder into your local ComfyUI's `custom_nodes/` directory
-
-### 🔷 Load Workflow File
-
-Move the  `ComfyUI_InsertAnything/InsertAnything.json` file into your local ComfyUI's `user/default/workflows` directory
-
-
-### 🔷 Mask Option
-
-Use the **Mask Option** component to choose between two mask types:
-
-1. **Sketch**: Draw a mask directly in the ComfyUI interface.
-2. **Upload**: Upload an external image file as a mask.
-
-### 🔷 For Nunchaku(10 VRAM)
-We also provide a Nunchaku version of ComfyUI. You just need to follow the instructions above and replace the file names with those of the Nunchaku version (`ComfyUI_Nunchaku_InsertAnything`) .
-
-
-### 🔷 For New ComfyUI(24 VRAM)
-We also provide a new version of ComfyUI. You just need to follow the instructions above and replace the file names with those of the new version (`ComfyUI_InsertAnything_New`). In the new ComfyUI workflow, there's no need to download the full model folder—users can manually select the model, text encoder, vision encoder, and VAE as usual.
+We have specially created a [repository](https://github.com/mo230761/InsertAnything-ComfyUI-official) for the workflow and you can check the repository and have a try!
 
 ## 🧩 ComfyUI in community
 We deeply appreciate the community of developers who have created innovative applications based on the Insert Anything model. Throughout this development process, we have received invaluable feedback. As we continue to enhance our models, we will carefully consider these insights to further optimize our models and provide users with a better experience.
